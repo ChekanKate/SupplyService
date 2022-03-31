@@ -1,0 +1,22 @@
+---
+spring:
+  profiles: default
+  datasource:
+    url: "jdbc:sqlite:C:/Users/user/IdeaProjects/SupplyService/sqlite.db"
+    driver-class-name: org.sqlite.JDBC
+    initialization-mode: never
+    hikari:
+      maximum-pool-size: 1
+
+cds:
+  remote.services:
+    ServiceOrder:
+      destination:
+        service: "ServiceOrder"
+        type: "odata-v4"
+        suffix: "/odata/v4"
+        properties:
+          url: http://localhost:8080
+
+server:
+  port : 8081
